@@ -14,6 +14,8 @@ INSTALLER = ROOT / "install.sh"
 class InstallerTests(unittest.TestCase):
     def run_install(self, home: Path, *args: str) -> subprocess.CompletedProcess[str]:
         env = os.environ.copy()
+        env.pop("XDG_CONFIG_HOME", None)
+        env.pop("XDG_STATE_HOME", None)
         env.update({"HOME": str(home), "SHELL": "/bin/zsh", "AUTORESUME_SOURCE_DIR": str(ROOT)})
         return subprocess.run(["bash", str(INSTALLER), "--yes", *args], env=env,
                               text=True, capture_output=True, check=False)
