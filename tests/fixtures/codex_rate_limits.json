@@ -1,0 +1,14 @@
+{
+  "id": 2,
+  "result": {
+    "rateLimits": {
+      "limitId": "codex",
+      "primary": {"usedPercent": 100, "windowDurationMins": 300, "resetsAt": 2000},
+      "secondary": {"usedPercent": 82, "windowDurationMins": 10080, "resetsAt": 9000},
+      "credits": {"hasCredits": false, "unlimited": false, "balance": "0"},
+      "individualLimit": null,
+      "spendControlReached": false
+    },
+    "rateLimitsByLimitId": {}
+  }
+}
